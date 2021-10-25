@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../models/user");
+const Post = require("../models/post");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 
@@ -8,6 +9,13 @@ const saltRounds = 10;
 router.get("/users", async (req, res) => {
   const users = await User.findAll();
   res.send(users);
+});
+
+// GET user posts
+router.get("/users/:id/posts", async (req, res) => {
+  const userId = req.params.id;
+  const posts = await Post.findAll({ where: { userId: userId } });
+  res.send(posts);
 });
 
 // POST user

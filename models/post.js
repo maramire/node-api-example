@@ -12,7 +12,7 @@ Post.init(
   },
   {
     sequelize, // connection instance
-    modelName: "Post",
+    modelName: "post",
   }
 );
 

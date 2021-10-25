@@ -18,7 +18,7 @@ User.init(
   },
   {
     sequelize, // connection instance
-    modelName: "User",
+    modelName: "user",
   }
 );
 

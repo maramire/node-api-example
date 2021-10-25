@@ -23,7 +23,7 @@ app.get("*", function (req, res) {
 
 // testing DB connection and then start app
 sequelize
-  .sync({ force: true })
+  .sync()
   .then(() => {
     console.log("Connection with DB has been established successfully.");
     console.log("All models were synchronized successfully.");
